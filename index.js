@@ -5,7 +5,6 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
-const port = process.env.PORT || 3000;
 const mongoUri = 'mongodb+srv://deepanshugupta899:ZxEBEU2tZW5sI9BF@cluster0.ki6bgeh.mongodb.net/webscraper';
 
 mongoose.connect(mongoUri, {
@@ -27,6 +26,8 @@ const scrapedDataSchema = new mongoose.Schema({
     screenshot: String,
     url: String,
 }, { timestamps: true });
+
+const port = 3000;
 
 const ScrapedData = mongoose.model('ScrapedData', scrapedDataSchema);
 app.get("/",(req,res)=>{res.send("working fine")})
