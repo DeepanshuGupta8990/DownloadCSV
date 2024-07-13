@@ -6,8 +6,9 @@ const fs = require('fs');
 
 const app = express();
 const port = process.env.PORT || 3000;
+const mongoUri = 'mongodb+srv://deepanshugupta899:ZxEBEU2tZW5sI9BF@cluster0.ki6bgeh.mongodb.net/webscraper';
 
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect(mongoUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
